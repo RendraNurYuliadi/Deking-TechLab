@@ -1,0 +1,82 @@
+/* Scroll reveal animations */
+:root {
+  --reveal-delay: 0.35s;
+  --stagger-delay: 0.15s;
+}
+
+/* Base reveal class - hidden by default */
+.reveal {
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform, opacity;
+  transition: transform var(--reveal-delay) cubic-bezier(0.4, 0, 0.2, 1),
+              opacity var(--reveal-delay) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Revealed state */
+.reveal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* Fade up effect */
+.reveal-fadeUp {
+  transform: translateY(30px);
+}
+
+/* Scale effect */
+.reveal-scale {
+  transform: scale(0.9);
+}
+
+/* Delay utilities for staggered animations */
+.delay-1 { transition-delay: calc(var(--stagger-delay) * 1); }
+.delay-2 { transition-delay: calc(var(--stagger-delay) * 2); }
+.delay-3 { transition-delay: calc(var(--stagger-delay) * 3); }
+.delay-4 { transition-delay: calc(var(--stagger-delay) * 4); }
+.delay-5 { transition-delay: calc(var(--stagger-delay) * 5); }
+
+/* Enhanced hover effects */
+.proyek-item {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.proyek-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.proyek-item .item-visual {
+  transition: transform 0.4s ease;
+}
+
+.proyek-item .item-visual img {
+  transition: transform 0.4s ease;
+}
+
+.proyek-item:hover .item-visual {
+  transform: scale(1.02);
+}
+
+.proyek-item:hover .item-visual img {
+  transform: scale(1.05);
+}
+
+/* Team card animations */
+.team-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced section transitions */
+.section-tentang,
+.section-layanan,
+.section-proyek,
+.section-team {
+  transition: opacity 0.5s ease;
+}
