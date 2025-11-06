@@ -867,7 +867,7 @@ section {
 /* Header */
 .team-header {
   display: flex;
-  flex-direction: column;
+  flex-wrap:wrap;
   gap: 15px;
   margin-bottom: 40px;
 }
