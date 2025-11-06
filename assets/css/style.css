@@ -901,7 +901,7 @@ section {
   border-radius: 15px;
   overflow: hidden;
   text-align: center;
-  padding: 5px 5px 20px 5px;
+  padding: 0 0 20px 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
 }
