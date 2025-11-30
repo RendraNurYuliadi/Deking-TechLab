@@ -7,6 +7,9 @@
   <link rel="icon" type="image/png" href="/assets/img/icon.png">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
+  <!-- Import Material Symbols -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
 
   <!-- Import font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
@@ -47,10 +50,32 @@
 
     <!-- Menu Toggle (untuk mobile) -->
     <div class="menu-toggle" id="menu-toggle">
-      <span></span><span></span><span></span>
+       <span class="material-symbols-outlined" >dehaze</span>
     </div>
   </div>
 </header>
+
+<!-- ========== MOBILE POPUP MENU (muncul saat hamburger ditekan) ========== -->
+<div class="mobile-popup" id="mobile-popup">
+  <div class="mobile-popup-content">
+
+    <ul>
+      <li><a href="#beranda">Beranda</a></li>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#layanan">Layanan</a></li>
+      <li><a href="#proyek">Proyek</a></li>
+      <li><a href="#our-team">Tim</a></li>
+      <li><a href="#hubungi">Teknologi</a></li>
+    </ul>
+
+    
+    <!-- Close Button -->
+    <button class="close-popup" id="close-popup">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+
+  </div>
+</div>
 
   <!-- ========== MAIN CONTENT ========== -->
 <main>
@@ -417,6 +442,14 @@
 <button id="scroll-top" class="scroll-top" aria-label="Kembali ke atas">
   <i class="bx bx-up-arrow-alt"></i>
 </button>
+
+<!-- Tombol WhatsApp Floating -->
+<div class="wa-floating">
+  <a href="https://wa.me/6281234567890" target="_blank">
+    <i class="bx bxl-whatsapp"></i>
+    <span class="wa-label">WhatsApp</span>
+  </a>
+</div>
 
 
 </body>

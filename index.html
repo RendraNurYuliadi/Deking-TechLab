@@ -3,14 +3,247 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deking TechLab</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <script src="assets/js/main.js" defer></script>
+  <title>Deking TechLab — Splash Screen</title>
+  <link rel="icon" type="image/png" href="/assets/img/icon.png">
+
+  <style>
+    :root {
+      --primary-dark: #041E3A;
+    }
+
+    /* GLOBAL */
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #000;
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* BACKGROUND GRADIENT */
+    .gradient-bg {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 20% 30%, var(--primary-dark), transparent 65%),
+                  radial-gradient(circle at 70% 80%, #000814, transparent 60%),
+                  radial-gradient(circle at 50% 20%, #020f20, transparent 60%),
+                  linear-gradient(120deg, #000, #020d1a, #041e3a);
+      background-size: 250% 250%;
+      animation: gradMove 14s ease-in-out infinite;
+      z-index: -3;
+    }
+
+    @keyframes gradMove {
+      0%   { background-position: 0% 0%; }
+      50%  { background-position: 100% 100%; }
+      100% { background-position: 0% 0%; }
+    }
+
+    /* GRID */
+    .grid {
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 80px 80px;
+      animation: gridMove 12s linear infinite;
+      opacity: 0.35;
+      z-index: -2;
+    }
+
+    @keyframes gridMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 80px 80px; }
+    }
+
+    /* PARTICLES */
+    .particles {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .particle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.55);
+      border-radius: 50%;
+      filter: blur(1px);
+      animation: floatUp 9s ease-in-out infinite;
+    }
+
+    @keyframes floatUp {
+      0%   { transform: translateY(60vh) scale(0.3); opacity: 0; }
+      20%  { opacity: 0.8; }
+      100% { transform: translateY(-70vh) scale(1); opacity: 0; }
+    }
+
+    /* SCAN LINE */
+    .scanline {
+      position: fixed;
+      top: -10%;
+      width: 100%;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.6);
+      box-shadow: 0 0 20px rgba(255,255,255,0.6);
+      animation: scan 11s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    @keyframes scan {
+      0% { top: -10%; opacity: 0; }
+      15% { opacity: 1; }
+      50% { top: 110%; }
+      85% { opacity: 0; }
+      100% { top: -10%; }
+    }
+
+    /* MAIN TITLE */
+    .splash-container {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      color: #fff;
+      z-index: 5;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .splash-container h1 {
+      font-size: 3.8rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      background: linear-gradient(90deg, #fff, var(--primary-dark), #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      opacity: 0;
+      transform: translateY(30px) scale(0.8);
+      animation: titleIn 2.2s ease forwards;
+    }
+
+    @keyframes titleIn {
+      0% { opacity: 0; transform: translateY(30px) scale(0.8); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* GLOW BEHIND TITLE */
+    .splash-container h1::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      background: var(--primary-dark);
+      opacity: 0.25;
+      filter: blur(140px);
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      animation: glowPulse 7s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes glowPulse {
+      0%,100% { opacity: 0.25; transform: translate(-50%, -50%) scale(1); }
+      50%     { opacity: 0.45; transform: translate(-50%, -50%) scale(1.35); }
+    }
+
+    /* FADE OUT */
+    .fade-out {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1.4s ease;
+      z-index: 999;
+    }
+
+    /* ============================================
+       RESPONSIVE SECTION
+    ============================================ */
+
+    @media (max-width: 1000px) {
+      .splash-container h1 {
+        font-size: 3.4rem;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .splash-container h1 { font-size: 3.1rem; }
+    }
+
+    @media (max-width: 800px) {
+      .splash-container h1 { font-size: 2.8rem; }
+    }
+
+    @media (max-width: 700px) {
+      .splash-container h1 { font-size: 2.5rem; letter-spacing: 3px; }
+    }
+
+    @media (max-width: 500px) {
+      .splash-container h1 { font-size: 2.2rem; letter-spacing: 2px; }
+      .splash-container { padding: 0 10px; }
+    }
+
+    @media (max-width: 400px) {
+      .splash-container h1 { font-size: 1.9rem; }
+    }
+
+    @media (max-width: 300px) {
+      .splash-container h1 { font-size: 1.6rem; }
+    }
+
+  </style>
 </head>
+
 <body>
-  <div class="redirect-container">
-    <h1>Deking TechLab</h1>
-    <a href="pages/home.html">home</a>
+
+  <div class="gradient-bg"></div>
+  <div class="grid"></div>
+  <div class="particles" id="particleContainer"></div>
+  <div class="scanline"></div>
+
+  <div class="splash-container">
+    <h1>Deking Tech Lab</h1>
   </div>
+
+  <div id="fadeLayer" class="fade-out"></div>
+
+  <script>
+    /* CREATE PARTICLES */
+    const container = document.getElementById("particleContainer");
+    const count = 80;
+
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement("div");
+      p.classList.add("particle");
+
+      const size = Math.random() * 5 + 3;
+      p.style.width = size + "px";
+      p.style.height = size + "px";
+
+      p.style.left = Math.random() * 100 + "vw";
+      p.style.top = Math.random() * 100 + "vh";
+
+      p.style.animationDelay = Math.random() * 7 + "s";
+      p.style.opacity = Math.random() * 0.6 + 0.3;
+
+      container.appendChild(p);
+    }
+
+    /* FADE OUT + REDIRECT */
+    setTimeout(() => {
+      document.getElementById("fadeLayer").style.opacity = 1;
+      setTimeout(() => {
+        window.location.href = "pages/home.html";
+      }, 1500);
+    }, 11000);
+  </script>
+
 </body>
 </html>

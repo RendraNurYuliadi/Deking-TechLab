@@ -54,4 +54,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Jalankan saat load & scroll ---
   updateOnScroll();
   window.addEventListener('scroll', updateOnScroll, { passive: true });
+
+  
 });
+
+
+
+  const menuToggle = document.getElementById("menu-toggle");
+  const popup = document.getElementById("mobile-popup");
+  const closePopup = document.getElementById("close-popup");
+
+  menuToggle.addEventListener("click", () => {
+    popup.classList.add("show");
+  });
+
+  closePopup.addEventListener("click", () => {
+    popup.classList.remove("show");
+  });

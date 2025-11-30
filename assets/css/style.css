@@ -232,8 +232,74 @@ section {
 /* ---- TOGGLE MENU (MOBILE) ---- */
 .menu-toggle {
   display: none;
+  cursor: pointer;
 }
 
+/* Warna default (navbar transparan) */
+.menu-toggle .material-symbols-outlined {
+  color: white;
+  font-size: 34px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Animasi saat hover */
+.menu-toggle .material-symbols-outlined:hover {
+  transform: scale(1.1);
+}
+
+/* Saat navbar sticky/scrolled: ganti jadi hitam */
+.navbar.scrolled .menu-toggle .material-symbols-outlined {
+  color: black;
+}
+
+
+.menu-toggle span {
+  font-size: 32px;
+}
+
+.mobile-popup {
+  display: none;
+}
+
+.mobile-popup ul {
+  list-style: none;      /* Hilangkan bullet */
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-popup ul li a {
+  text-decoration: none; /* Hilangkan underline */
+  color: inherit;        /* Ikut warna teks parent */
+  display: block;
+  padding: 12px 0;       /* Biar rapi */
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.mobile-popup ul li a:hover {
+  font-weight: 700; /* Ubah font weight saat hover */
+  background: linear-gradient(90deg, var(--primary-dark), rgb(0, 96, 147));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mobile-popup ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: var(--primary-dark);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.mobile-popup ul li a:hover::after {
+  width: 15%;
+  left: 0;
+}
 
 
 /* ---- NOTE: NAVSTYLE ----
@@ -853,6 +919,8 @@ section {
   object-fit: cover;
   border-radius: 15px;
 }
+
+
 /* =========================================
    10. OUR TEAM (DESKTOP ONLY)
 ========================================= */
@@ -1255,10 +1323,13 @@ section {
 /* =========================================
    SCROLL TO TOP BUTTON
 ========================================= */
+/* =========================================
+   SCROLL TO TOP BUTTON
+========================================= */
 .scroll-top {
   position: fixed;
   bottom: 30px;
-  right: 30px;
+  left: 30px; /* ⬅ pindah ke kiri */
   background: var(--primary-dark);
   color: #fff;
   border: none;
@@ -1273,6 +1344,7 @@ section {
   opacity: 0;
   visibility: hidden;
   transition: all 0.4s ease;
+
   /* ✨ Putih lembut bersinar */
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 
               0 0 30px rgba(255, 255, 255, 0.2);
@@ -1284,7 +1356,6 @@ section {
   transition: transform 0.3s ease;
 }
 
-/* Saat hover: glow makin terang */
 .scroll-top:hover {
   transform: translateY(-4px);
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.8),
@@ -1295,8 +1366,1756 @@ section {
   transform: translateY(-2px);
 }
 
-/* Saat tampil */
 .scroll-top.show {
   opacity: 1;
   visibility: visible;
+}
+
+
+/* =========================================
+   WHATSAPP FLOATING BUTTON — FIX POSITION
+========================================= */
+.wa-floating {
+  position: fixed;
+  bottom: 30px;
+  right: 30px; /* 🔥 Kembali ke pojok kanan */
+  z-index: 998;
+}
+
+.wa-floating a {
+  position: relative;
+  background: #25D366;
+  color: #fff;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: 0.3s ease;
+
+  /* Glow sama kayak scroll-top */
+  box-shadow: 
+    0 0 15px rgba(255, 255, 255, 0.5),
+    0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.wa-floating a:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 0 25px rgba(255, 255, 255, 0.8),
+    0 0 50px rgba(255, 255, 255, 0.4);
+}
+
+.wa-floating a i {
+  font-size: 28px;
+  transition: 0.3s ease;
+}
+
+/* Hover icon naik */
+.wa-floating a:hover i {
+  transform: translateY(-2px);
+}
+
+/* LABEL WHATSAPP */
+.wa-floating .wa-label {
+  position: absolute;
+  right: 60px; /* muncul di kanan */
+  opacity: 0;
+  background: #25D366;
+  padding: 9px 14px;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  transform: translateX(10px);
+  pointer-events: none;
+  transition: all 0.35s ease;
+
+  /* Shadow label sama */
+  box-shadow: 
+    0 0 15px rgba(255, 255, 255, 0.5),
+    0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.wa-floating a:hover .wa-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+
+/* =========================================
+   RESVPONSIF DESIGN
+========================================= */  
+
+@media (max-width: 1300px) {
+
+  .navbar { padding: 20px 100px; }
+  section { padding: 100px 100px; }
+  .footer { padding: 50px 100px 30px 100px; }
+}
+
+@media (max-width: 1200px) {
+
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links,
+  .nav-action {
+    display: none;
+  }
+
+
+/* Popup mobile */
+.mobile-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.mobile-popup.show {
+  display: flex;
+}
+
+.mobile-popup-content {
+  background: #fff;
+  padding: 25px;
+  width: 85%;
+  max-width: 350px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+}
+
+.close-popup {
+  position: absolute;
+  border-radius: 5px;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  color:var(--primary-dark);
+  transition: all 0.3s ease;
+  border: none;
+  background-color: transparent;
+}
+
+.close-popup:hover {
+  color: var(--primary-dark);
+  transform: scale(1.2) rotate(90deg);
+  color: white;
+  background-color: #000000;
+  
+}
+
+
+.close-popup span {
+  font-size: 28px;
+}
+
+
+
+
+
+
+
+
+
+
+  /* ---- HERO TEXT ---- */
+  .hero-content h1 {
+    font-size: 3.2rem;      /* dari 4.2rem */
+    padding: 25px;
+    max-width: 850px;
+  }
+
+  .hero-content p {
+    font-size: 1.3rem;      /* dari 1.5rem */
+    padding: 12px 20px;
+    max-width: 600px;
+  }
+
+  /* ---- BUTTONS ---- */
+  .hero-buttons {
+    gap: 12px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 24px;     /* sedikit mengecil */
+    font-size: 0.95rem;
+  }
+
+  /* ---- FLOATING IMAGES ---- */
+  .floating-images img {
+    width: 120px;           /* dari 160px → lebih proporsional */
+  }
+
+  /* Posisi kiri */
+  .floating-images img:nth-child(1) {
+    top: 38%;
+    left: 8%;
+  }
+
+  .floating-images img:nth-child(2) {
+    bottom: 20%;
+    left: 12%;
+  }
+
+  /* Posisi kanan */
+  .floating-images img:nth-child(3) {
+    top: 20%;
+    right: 14%;
+  }
+
+  .floating-images img:nth-child(4) {
+    top: 50%;
+    right: 8%;
+  }
+
+  .floating-images img:nth-child(5) {
+    bottom: 18%;
+    right: 14%;
+  }
+
+
+
+
+
+
+
+
+
+    /* Grid dua kolom lebih rapat */
+  .section-tentang .tentang-grid {
+    gap: 40px;
+  }
+
+  /* Headline sedikit mengecil */
+  .section-tentang .headline {
+    font-size: 2.4rem;
+  }
+
+  /* Deskripsi lebih kecil sedikit */
+  .section-tentang .deskripsi {
+    font-size: 1.05rem;
+  }
+
+  /* Box visi-misi lebih compact */
+  .visi-misi {
+    gap: 35px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .visi-misi h3 {
+    font-size: 1.1rem;
+  }
+
+  .misi-list li {
+    font-size: 1rem;
+  }
+
+  /* VISUAL (gambar) biar ga ketarik tinggi 100%) */
+  .section-tentang .tentang-visual img {
+    height: auto;       /* ← FIX terpenting */
+    max-width: 400px;   /* sedikit lebih kecil */
+  }
+
+
+
+  
+
+
+
+
+
+   /* ===== SUBTITLE ===== */
+  .section-layanan .subtitle {
+    font-size: 0.95rem;
+    padding: 8px 13px;
+    gap: 8px;
+  }
+
+  .subtitle-icon {
+    width: 11px;
+    height: 11px;
+  }
+
+
+  /* ===== HEADER ===== */
+  .layanan-header {
+    gap: 30px;
+    margin-bottom: 35px;
+  }
+
+  .layanan-header .headline {
+    font-size: 2.4rem;
+  }
+
+  .layanan-header .layanan-deskripsi {
+    font-size: 1.05rem;
+  }
+
+
+  /* ===== LIST LAYANAN ===== */
+  .list-layanan {
+    margin-top: 80px;
+    gap: 18px;
+  }
+
+
+  /* ===== CARD LAYANAN ===== */
+  .layanan-item {
+    padding: 20px 60px;
+    gap: 18px;
+    height: 300px; /* lebih pendek */
+    border-radius: 18px;
+  }
+
+  .layanan-item:hover {
+    transform: scale(1.02);
+  }
+
+
+  /* ===== VISUAL (gambar) ===== */
+  .layanan-item .item-visual {
+    max-width: 380px;
+  }
+
+  .layanan-item .item-visual img {
+    width: 420px;
+    transform: translateY(-40px);  /* tidak setinggi sebelumnya */
+  }
+
+  .layanan-item:hover .item-visual img {
+    transform: translateY(-55px) scale(1.04);
+  }
+
+
+  /* ===== DESKRIPSI ===== */
+  .layanan-item .deskripsi {
+    max-width: 600px;
+    gap: 10px;
+  }
+
+  .layanan-item .deskripsi p {
+    font-size: 1.05rem;
+  }
+
+
+
+
+
+
+
+
+
+
+
+  /* ===== SUBTITLE ===== */
+  .section-proyek .subtitle {
+    font-size: 0.95rem;
+    padding: 8px 13px;
+    gap: 8px;
+    margin-bottom: 25px;
+  }
+
+  .section-proyek .subtitle-icon {
+    width: 11px;
+    height: 11px;
+  }
+
+
+  /* ===== HEADER ===== */
+  .proyek-header {
+    gap: 30px;
+    margin-bottom: 35px;
+  }
+
+  .proyek-header .headline {
+    font-size: 2.2rem;
+  }
+
+  .proyek-header .proyek-deskripsi {
+    font-size: 1.05rem;
+  }
+
+
+  /* ===== LIST PROYEK ===== */
+  .list-proyek {
+    gap: 25px;
+  }
+
+
+  /* ===== CARD PROYEK ===== */
+  .proyek-item {
+    padding: 30px 70px;
+    gap: 20px;
+    /* border-radius: 14px;
+    display: flex;
+    flex-direction: column;   stack vertikal */
+  }
+
+  /* ===== DESKRIPSI ===== */
+  .proyek-item .deskripsi h2 {
+    font-size: 1.35rem;
+  }
+
+  .proyek-item .deskripsi p {
+    font-size: 1.02rem;
+  }
+
+
+  /* ===== VISUAL / GAMBAR ===== */
+  .proyek-item .item-visual img {
+    width: 380px;          /* mengecil */
+    max-height: 240px;     /* proporsional */
+    border-radius: 14px;
+  }
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+   /* ===== SUBTITLE ===== */
+  .section-team .subtitle {
+    font-size: 0.95rem;
+    padding: 8px 13px;
+    gap: 8px;
+    margin-bottom: 25px;
+  }
+
+  .section-team .subtitle-icon {
+    width: 11px;
+    height: 11px;
+  }
+
+
+  /* ===== HEADER ===== */
+  .team-header {
+    gap: 12px;
+    margin-bottom: 35px;
+  }
+
+  .team-header .headline {
+    font-size: 2.2rem;
+  }
+
+  .team-header .team-deskripsi {
+    font-size: 1.05rem;
+  }
+
+
+  /* ===== GRID TEAM ===== */
+  .list-team {
+    gap: 25px;
+  }
+
+  .team-item {
+    width: calc(33.333% - 20px); /* tetap 3 kolom */
+    border-radius: 14px;
+  }
+
+
+  /* ===== TEAM IMAGE ===== */
+  .team-item .team-img {
+    height: 260px; /* lebih rendah */
+  }
+
+  .team-item .team-img img {
+    border-radius: 14px;
+  }
+
+
+  /* ===== TEXT ===== */
+  .team-item h2 {
+    font-size: 1.15rem;
+    margin-top: 12px;
+  }
+
+  .team-item p {
+    font-size: 0.95rem;
+  }
+
+  
+
+
+
+
+
+
+
+
+
+
+
+    /* ===== SECTION HUBUNGI ===== */
+  .container-hubungi {
+    gap: 80px;
+  }
+
+  .hubungi-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .hubungi-header .headline {
+    font-size: 2.2rem;
+  }
+
+  .hubungi-header .hubungi-deskripsi {
+    font-size: 1rem;
+  }
+
+  /* Teknologi grid jadi 3 per baris */
+  .tech-item {
+    width: calc(33.333% - 20px);
+  }
+
+  /* ===== CONTACT CARD ===== */
+  .container-contact {
+    padding: 50px;
+    gap: 40px;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .contact-subtitle {
+    font-size: 1rem;
+  }
+
+  .contact-info,
+  .contact-form {
+    min-width: 300px;
+  }
+
+  .contact-form {
+    padding: 30px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px;
+  }
+}
+
+
+
+
+/* =====================================================
+   RESPONSIVE — MAX-WIDTH 1000px
+===================================================== */
+@media (max-width: 1000px) {
+
+  /* --- GLOBAL PADDING (WAJIB ADA DI SEMUA BREAKPOINT) --- */
+  .navbar {
+    padding: 20px 80px;
+  }
+
+  section {
+    padding: 110px 80px;
+  }
+
+  .footer {
+    padding: 60px 80px 40px 80px;
+  }
+
+
+  /* ======================================================
+            HERO
+  ====================================================== */
+
+  .hero-content h1 {
+    font-size: 3.2rem;
+    padding: 25px;
+    max-width: 850px;
+  }
+
+  .hero-content p {
+    font-size: 1.3rem;
+    padding: 12px 20px;
+    max-width: 600px;
+  }
+
+  .hero-buttons {
+    gap: 12px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+  }
+
+  .floating-images img {
+    width: 120px;
+  }
+
+  /* .floating-images img:nth-child(1) { top: 38%; left: 8%; }
+  .floating-images img:nth-child(2) { bottom: 20%; left: 12%; }
+  .floating-images img:nth-child(3) { top: 20%; right: 14%; }
+  .floating-images img:nth-child(4) { top: 50%; right: 8%; }
+  .floating-images img:nth-child(5) { bottom: 18%; right: 14%; }
+ */
+
+
+  /* ======================================================
+            TENTANG KAMI
+  ====================================================== */
+
+  .section-tentang .tentang-grid {
+    gap: 40px;
+  }
+
+  .section-tentang .headline {
+    font-size: 2.4rem;
+  }
+
+  .section-tentang .deskripsi {
+    font-size: 1.05rem;
+  }
+
+  .visi-misi {
+    gap: 35px;
+    padding: 25px;
+    flex-direction: column;
+  }
+
+  .visi-misi h3 {
+    font-size: 1.1rem;
+  }
+
+  .misi-list li {
+    font-size: 1rem;
+  }
+
+  .section-tentang .tentang-visual img {
+    height: auto;
+    max-width: 400px;
+  }
+
+
+
+  /* ======================================================
+            LAYANAN
+  ====================================================== */
+
+  .section-layanan .subtitle {
+    font-size: 0.95rem;
+    padding: 8px 13px;
+    gap: 8px;
+  }
+
+  .subtitle-icon {
+    width: 11px;
+    height: 11px;
+  }
+
+  .layanan-header {
+    gap: 30px;
+    margin-bottom: 35px;
+  }
+
+  .layanan-header .headline {
+    font-size: 2.2rem;
+  }
+
+  .layanan-header .layanan-deskripsi {
+    font-size: 1.05rem;
+  }
+
+  .list-layanan {
+    margin-top: 80px;
+    gap: 18px;
+  }
+
+  .layanan-item {
+    padding: 20px 60px;
+    gap: 18px;
+    height: 300px;
+    border-radius: 18px;
+  }
+
+  .layanan-item:hover {
+    transform: scale(1.02);
+  }
+
+  .layanan-item .item-visual {
+    max-width: 380px;
+  }
+
+  .layanan-item .item-visual img {
+    width: 420px;
+    transform: translateY(-40px);
+  }
+
+  .layanan-item:hover .item-visual img {
+    transform: translateY(-55px) scale(1.04);
+  }
+
+  .layanan-item .deskripsi {
+    max-width: 600px;
+    gap: 10px;
+  }
+
+  .layanan-item .deskripsi p {
+    font-size: 1.05rem;
+  }
+
+
+
+  /* ======================================================
+            PROYEK
+  ====================================================== */
+
+  .section-proyek .subtitle {
+    font-size: 0.95rem;
+    padding: 8px 13px;
+    gap: 8px;
+    margin-bottom: 25px;
+  }
+
+  .section-proyek .subtitle-icon {
+    width: 11px;
+    height: 11px;
+  }
+
+  .proyek-header {
+    gap: 30px;
+    margin-bottom: 35px;
+  }
+
+  .proyek-header .headline {
+    font-size: 2.2rem;
+  }
+
+  .proyek-header .proyek-deskripsi {
+    font-size: 1.05rem;
+  }
+
+  .list-proyek {
+    gap: 25px;
+  }
+
+  .proyek-item {
+    padding: 30px 70px;
+    gap: 20px;
+  }
+
+  .proyek-item .deskripsi h2 {
+    font-size: 1.35rem;
+  }
+
+  .proyek-item .deskripsi p {
+    font-size: 1.02rem;
+  }
+
+  .proyek-item .item-visual img {
+    width: 380px;
+    max-height: 240px;
+    border-radius: 14px;
+  }
+
+
+
+  /* ======================================================
+            TEAM
+  ====================================================== */
+
+  .section-team .subtitle {
+    font-size: 0.95rem;
+    padding: 8px 13px;
+    gap: 8px;
+    margin-bottom: 25px;
+  }
+
+  .team-header {
+    gap: 12px;
+    margin-bottom: 35px;
+  }
+
+  .team-header .headline {
+    font-size: 2.2rem;
+  }
+
+  .team-header .team-deskripsi {
+    font-size: 1.05rem;
+  }
+
+  .list-team {
+    gap: 25px;
+  }
+
+  .team-item {
+    width: calc(33.333% - 20px);
+    border-radius: 14px;
+  }
+
+  .team-item .team-img {
+    height: 260px;
+  }
+
+  .team-item h2 {
+    font-size: 1.15rem;
+    margin-top: 12px;
+  }
+
+  .team-item p {
+    font-size: 0.95rem;
+  }
+
+
+
+  /* ======================================================
+            TEKNOLOGI & KONTAK
+  ====================================================== */
+
+  .container-hubungi {
+    gap: 80px;
+  }
+
+  .hubungi-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .hubungi-header .headline {
+    font-size: 2.2rem;
+  }
+
+  .hubungi-header .hubungi-deskripsi {
+    font-size: 1rem;
+  }
+
+  .tech-item {
+    width: calc(33.333% - 20px);
+  }
+
+  .container-contact {
+    padding: 50px;
+    gap: 40px;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .contact-subtitle {
+    font-size: 1rem;
+  }
+
+  .contact-info,
+  .contact-form {
+    min-width: 300px;
+  }
+
+  .contact-form {
+    padding: 30px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px;
+  }
+}
+
+
+
+/* =====================================================
+   RESPONSIVE — MAX-WIDTH 900px
+===================================================== */
+@media (max-width: 900px) {
+
+  /* --- GLOBAL PADDING (WAJIB DI SETIAP BREAKPOINT) --- */
+  .navbar {
+    padding: 20px 60px;
+  }
+
+  section {
+    padding: 100px 60px;
+  }
+
+  .footer {
+    padding: 60px 60px 40px 60px;
+  }
+
+
+
+  /* ======================================================
+            HERO
+  ====================================================== */
+  .hero-content h1 {
+    font-size: 2.8rem;
+    padding: 22px;
+    max-width: 700px;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+    padding: 12px 18px;
+    max-width: 520px;
+  }
+
+  .hero-buttons {
+    gap: 10px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 22px;
+    font-size: 0.9rem;
+  }
+
+  .floating-images img {
+    width: 105px;
+  }
+
+  /* .floating-images img:nth-child(1) { top: 40%; left: 10%; }
+  .floating-images img:nth-child(2) { bottom: 18%; left: 10%; }
+  .floating-images img:nth-child(3) { top: 22%; right: 12%; }
+  .floating-images img:nth-child(4) { top: 52%; right: 8%; }
+  .floating-images img:nth-child(5) { bottom: 18%; right: 12%; } */
+
+
+
+  /* ======================================================
+            TENTANG KAMI
+  ====================================================== */
+  .section-tentang .tentang-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .section-tentang .headline {
+    font-size: 2rem;
+  }
+
+  .section-tentang .deskripsi {
+    font-size: 1rem;
+  }
+
+  .visi-misi {
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .section-tentang .tentang-visual img {
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+
+
+
+  /* ======================================================
+            LAYANAN
+  ====================================================== */
+  .section-layanan .subtitle {
+    font-size: 0.9rem;
+    padding: 7px 12px;
+  }
+
+    .layanan-header .headline {
+    font-size: 2rem;
+  }
+
+  .layanan-item {
+    padding: 50px;
+    gap: 16px;
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .layanan-item .item-visual img {
+    width: 450px;
+    transform: translateY(-30px);
+  }
+
+  .layanan-item:hover .item-visual img {
+    transform: translateY(-40px) scale(1.03);
+  }
+
+
+
+  /* ======================================================
+            PROYEK
+  ====================================================== */
+  .proyek-item {
+    padding: 25px 50px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .proyek-item .item-visual img {
+    width: 100%;
+    max-height: 500px;
+  }
+
+  .proyek-header .headline {
+        font-size: 2rem;
+    }
+
+
+
+  /* ======================================================
+            TEAM
+  ====================================================== */
+  .team-item {
+    width: calc(50% - 15px);
+  }
+
+  .team-item .team-img {
+    height: 240px;
+  }
+
+  .team-header .headline {
+        font-size: 2rem;
+    }
+
+
+
+  /* ======================================================
+            TEKNOLOGI & KONTAK
+  ====================================================== */
+  .hubungi-header {
+    text-align: center;
+  }
+
+  .hubungi-header .headline {
+    font-size: 2rem;
+  }
+
+  .tech-item {
+    width: calc(33.333% - 15px);
+  }
+
+  .container-contact {
+    padding: 40px;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contact-title {
+    font-size: 1.8rem;
+  }
+
+  .contact-form {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+  }
+   /* Bagian info juga full agar rapi stacking */
+  .contact-info {
+    width: 100% !important;
+    min-width: unset !important;
+  }
+
+  .container-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px;
+  }
+
+  .contact-details {
+    width: 100%;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px;
+  }
+}
+
+
+
+/* =====================================================
+   RESPONSIVE — MAX-WIDTH 750px
+===================================================== */
+@media (max-width: 750px) {
+
+  /* --- GLOBAL PADDING (WAJIB ADA) --- */
+  .navbar {
+    padding: 18px 40px;
+  }
+
+  section {
+    padding: 90px 40px;
+  }
+
+  .footer {
+    padding: 50px 40px 35px 40px;
+  }
+
+
+
+  /* ======================================================
+            HERO
+  ====================================================== */
+  .hero-content h1 {
+    font-size: 2.4rem;
+    padding: 18px;
+    max-width: 550px;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+    padding: 10px 18px;
+    max-width: 450px;
+  }
+
+  .hero-buttons {
+    gap: 10px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 9px 20px;
+    font-size: 0.9rem;
+  }
+
+  .floating-images img {
+    width: 90px;
+  }
+
+  /* .floating-images img:nth-child(1) { top: 40%; left: 8%; }
+  .floating-images img:nth-child(2) { bottom: 18%; left: 8%; }
+  .floating-images img:nth-child(3) { top: 20%; right: 10%; }
+  .floating-images img:nth-child(4) { top: 50%; right: 6%; }
+  .floating-images img:nth-child(5) { bottom: 18%; right: 10%; } */
+
+
+
+  /* ======================================================
+            TENTANG KAMI
+  ====================================================== */
+  .section-tentang .tentang-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .section-tentang .headline {
+    font-size: 1.8rem;
+  }
+
+  .section-tentang .deskripsi {
+    font-size: 0.95rem;
+  }
+
+  .visi-misi {
+    padding: 18px;
+    gap: 25px;
+  }
+
+  .section-tentang .tentang-visual img {
+    max-width: 100%;
+  }
+
+
+
+  /* ======================================================
+            LAYANAN
+  ====================================================== */
+  .section-layanan .subtitle {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+
+  .layanan-item {
+    padding: 50px;
+    gap: 14px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .layanan-item .item-visual img {
+    width: 400px;
+    transform: translateY(-25px);
+  }
+
+  .layanan-item:hover .item-visual img {
+    transform: translateY(-35px) scale(1.03);
+  }
+
+    .layanan-header .headline {
+        font-size: 1.8rem;
+    }
+
+  /* ======================================================
+            PROYEK
+  ====================================================== */
+  .proyek-item {
+    padding: 20px 40px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .proyek-item .item-visual img {
+    width: 100%;
+    max-height: 500px;
+  }
+
+  .proyek-header .headline {
+        font-size: 1.8rem;
+    }
+
+
+
+  /* ======================================================
+            TEAM
+  ====================================================== */
+  .list-team {
+    gap: 20px;
+  }
+
+  .team-item {
+    width: 100%;        /* Dari 50% → penuh (lebih rapi di 750px) */
+    border-radius: 12px;
+  }
+
+  .team-item .team-img {
+    height: 420px;
+  }
+
+  .team-item h2 {
+    font-size: 1.1rem;
+  }
+
+  .team-item p {
+    font-size: 0.9rem;
+  }
+
+  .team-header .headline {
+    font-size: 1.8rem;
+  }
+
+
+  /* ======================================================
+            TEKNOLOGI & KONTAK
+  ====================================================== */
+
+  .hubungi-header .headline {
+    font-size: 1.8rem;
+  }
+
+  .tech-item {
+    width: calc(50% - 10px);  /* 3 kolom jadi 2 */
+  }
+
+  .container-contact {
+    padding: 30px;
+    gap: 25px;
+    flex-direction: column;
+  }
+
+  .contact-title {
+    font-size: 1.6rem;
+  }
+
+  /* FORM & INFO FULL WIDTH */
+  .contact-form,
+  .contact-info {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+  }
+
+  .contact-form {
+    padding: 25px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+
+  .contact-details {
+    width: 100%;
+  }
+}
+
+
+
+/* =====================================================
+   RESPONSIVE — MAX-WIDTH 600px
+===================================================== */
+@media (max-width: 600px) {
+
+  /* --- GLOBAL PADDING (WAJIB ADA) --- */
+  .navbar {
+    padding: 15px 25px;
+  }
+
+  section {
+    padding: 80px 25px;
+  }
+
+  .footer {
+    padding: 45px 25px 30px 25px;
+  }
+
+
+
+  /* ======================================================
+            HERO
+  ====================================================== */
+  .hero-content h1 {
+    font-size: 2rem;
+    padding: 15px;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+
+  .floating-images img {
+    width: 75px;
+  }
+
+
+
+  /* ======================================================
+            TENTANG KAMI
+  ====================================================== */
+  .section-tentang .headline {
+    font-size: 1.8rem;
+  }
+
+  .visi-misi {
+    padding: 15px;
+    gap: 20px;
+  }
+
+  .visi-misi .item {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  /* gambar */
+  .section-tentang .tentang-visual img {
+    max-width: 100%;
+  }
+
+
+
+  /* ======================================================
+            LAYANAN
+  ====================================================== */
+  .layanan-item {
+    padding: 40px 25px;
+  }
+
+  .layanan-item .item-visual img {
+    width: 450px;
+  }
+
+
+
+  /* ======================================================
+            PROYEK
+  ====================================================== */
+  .proyek-item {
+    padding: 20px 25px;
+  }
+
+  .proyek-item .item-visual img {
+    max-height: 400px;
+  }
+
+
+
+  /* ======================================================
+            TEAM
+  ====================================================== */
+  .team-item .team-img {
+    height: 350px;
+  }
+
+  .team-item h2 {
+    font-size: 1rem;
+  }
+
+  .team-item p {
+    font-size: 0.85rem;
+  }
+
+
+
+  /* ======================================================
+            TEKNOLOGI
+  ====================================================== */
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+    gap: 15px;
+  }
+
+
+  /* ======================================================
+            KONTAK
+  ====================================================== */
+
+  .hubungi-header .headline {
+    font-size: 1.6rem;
+  }
+
+  .container-contact {
+    padding: 25px;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  /* tetap 100% */
+  .contact-form,
+  .contact-info {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .contact-info {
+    gap: 12px;
+  }
+
+  .contact-details div {
+    font-size: 0.9rem;
+  }
+}
+
+/* =====================================================
+            FOOTER
+===================================================== */
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+/* =====================================================
+   RESPONSIVE — MAX-WIDTH 500px
+===================================================== */
+@media (max-width: 500px) {
+
+  /* --- GLOBAL PADDING (WAJIB ADA) --- */
+  .navbar {
+    padding: 12px 20px;
+  }
+
+  section {
+    padding: 70px 20px;
+  }
+
+  .footer {
+    padding: 40px 20px 28px 20px;
+  }
+
+
+
+  /* ======================================================
+            HERO
+  ====================================================== */
+  .hero-content h1 {
+    font-size: 1.8rem;
+    padding: 12px;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+    padding: 8px 12px;
+  }
+
+  .floating-images img {
+    width: 65px;
+  }
+
+
+
+  /* ======================================================
+            TENTANG KAMI
+  ====================================================== */
+  .section-tentang .headline {
+    font-size: 1.6rem;
+  }
+
+  .visi-misi {
+    padding: 12px;
+    gap: 18px;
+  }
+
+  .visi-misi .item {
+    font-size: 0.88rem;
+  }
+
+
+
+  /* ======================================================
+            LAYANAN
+  ====================================================== */
+  .layanan-item {
+    padding: 35px 20px;
+  }
+
+  .layanan-header{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .layanan-item .item-visual img {
+    width: 420px;   /* dikecilkan lagi dari 450 → 320 */
+  }
+
+
+
+  /* ======================================================
+            PROYEK
+  ====================================================== */
+  .proyek-item {
+    padding: 18px 20px;
+  }
+
+  .proyek-item .item-visual img {
+    max-height: 450px;
+  }
+
+  .proyek-header{
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  /* ======================================================
+            TEAM
+  ====================================================== */
+  .team-item .team-img {
+    height: 350px;
+  }
+
+  .team-item h2 {
+    font-size: 0.95rem;
+  }
+
+  .team-item p {
+    font-size: 0.8rem;
+  }
+
+
+
+  /* ======================================================
+            TEKNOLOGI
+  ====================================================== */
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+
+  /* ======================================================
+            KONTAK
+  ====================================================== */
+
+  .hubungi-header .headline {
+    font-size: 1.45rem;
+  }
+
+  .container-contact {
+    padding: 22px;
+    gap: 18px;
+    flex-direction: column;
+  }
+
+  /* FORM tetap 100% */
+  .contact-form,
+  .contact-info {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .contact-form {
+    padding: 18px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.88rem;
+    padding: 9px;
+  }
+
+  .contact-info {
+    gap: 10px;
+  }
+
+  .contact-details div {
+    font-size: 0.85rem;
+  }
+}
+
+
+
+
+
+/* =====================================================
+   RESPONSIVE — MAX-WIDTH 400px
+===================================================== */
+
+
+@media (max-width: 400px) {
+
+  /* --- GLOBAL PADDING (WAJIB ADA) --- */
+  .navbar {
+    padding: 10px 18px;
+  }
+
+  section {
+    padding: 60px 18px;
+  }
+
+  .footer {
+    padding: 35px 18px 25px 18px;
+  }
+
+
+  /* ======================================================
+            TENTANG KAMI
+  ====================================================== */
+  .section-tentang .headline {
+    font-size: 1.45rem;
+  }
+
+  .visi-misi {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .visi-misi .item {
+    font-size: 0.85rem;
+  }
+
+
+
+  /* ======================================================
+            LAYANAN
+  ====================================================== */
+  .layanan-item {
+    padding: 30px 18px;
+  }
+
+  .layanan-item .item-visual img {
+    width: 300px;  /* mengecil dari 420 → 300 */
+  }
+
+
+
+  /* ======================================================
+            PROYEK
+  ====================================================== */
+  .proyek-item {
+    padding: 16px 18px;
+  }
+
+  .proyek-item .item-visual img {
+    max-height: 300px;
+  }
+
+
+
+  /* ======================================================
+            TEAM
+  ====================================================== */
+  .team-item .team-img {
+    height: 260px;
+  }
+
+  .team-item h2 {
+    font-size: 0.9rem;
+  }
+
+  .team-item p {
+    font-size: 0.78rem;
+  }
+
+
+
+  /* ======================================================
+            TEKNOLOGI
+  ====================================================== */
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+
+
+
+  /* ======================================================
+            KONTAK
+  ====================================================== */
+
+  .hubungi-header .headline {
+    font-size: 1.3rem;
+  }
+
+  .container-contact {
+    padding: 20px;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .contact-form,
+  .contact-info {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .contact-form {
+    padding: 16px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .contact-details div {
+    font-size: 0.8rem;
+  }
 }
