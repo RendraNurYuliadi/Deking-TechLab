@@ -71,3 +71,24 @@ document.addEventListener('DOMContentLoaded', () => {
   closePopup.addEventListener("click", () => {
     popup.classList.remove("show");
   });
+
+
+
+// Fade-out overlay setelah 5 detik
+const particlesContainer = document.querySelector('.particles');
+const numParticles = 20; // jumlah partikel kecil
+
+for (let i = 0; i < numParticles; i++) {
+  const particle = document.createElement('div');
+  particle.classList.add('particle');
+  // acak arah awal
+  particle.style.transform = `rotate(${Math.random()*360}deg) translateX(0px)`;
+  particlesContainer.appendChild(particle);
+}
+
+// Hilang total overlay setelah 5 detik
+setTimeout(() => {
+  document.getElementById("loading-overlay").classList.add("hidden");
+}, 2500);
+
+

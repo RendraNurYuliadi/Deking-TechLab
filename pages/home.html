@@ -25,432 +25,445 @@
 </head>
 
 <body>
-<!-- ========== NAVBAR ========== -->
-<header class="navbar">
-  <div class="container">
-    <div class="logo">
-      <img id="navbar-logo"  src="/assets/img/Deking Logo 1.png" alt="Deking TechLab Logo">
-      <!-- <span>Deking TechLab</span> -->
-    </div>
 
-    <nav class="nav-links">
+<!-- LOADING OVERLAY -->
+<div id="loading-overlay">
+  <div class="loader-glow"></div>
+  <div class="particles"></div>
+</div>
+
+
+
+
+
+
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <img id="navbar-logo"  src="/assets/img/Deking Logo 1.png" alt="Deking TechLab Logo">
+        <!-- <span>Deking TechLab</span> -->
+      </div>
+
+      <nav class="nav-links">
+        <ul>
+          <li><a href="#beranda" class="active">Beranda</a></li>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#layanan">Layanan</a></li>
+          <li><a href="#proyek">Proyek</a></li>
+          <li><a href="#our-team">Tim</a></li>
+          <li><a href="#hubungi">Teknologi</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-action">
+        <a href="#hubungi" class="btn-hubungi">Hubungi Kami</a>
+      </div>
+
+      <!-- Menu Toggle (untuk mobile) -->
+      <div class="menu-toggle" id="menu-toggle">
+        <span class="material-symbols-outlined" >dehaze</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== MOBILE POPUP MENU (muncul saat hamburger ditekan) ========== -->
+  <div class="mobile-popup" id="mobile-popup">
+    <div class="mobile-popup-content">
+
       <ul>
-        <li><a href="#beranda" class="active">Beranda</a></li>
+        <li><a href="#beranda">Beranda</a></li>
         <li><a href="#tentang">Tentang</a></li>
         <li><a href="#layanan">Layanan</a></li>
         <li><a href="#proyek">Proyek</a></li>
         <li><a href="#our-team">Tim</a></li>
         <li><a href="#hubungi">Teknologi</a></li>
       </ul>
-    </nav>
 
-    <div class="nav-action">
-      <a href="#hubungi" class="btn-hubungi">Hubungi Kami</a>
-    </div>
+      
+      <!-- Close Button -->
+      <button class="close-popup" id="close-popup">
+        <span class="material-symbols-outlined">close</span>
+      </button>
 
-    <!-- Menu Toggle (untuk mobile) -->
-    <div class="menu-toggle" id="menu-toggle">
-       <span class="material-symbols-outlined" >dehaze</span>
     </div>
   </div>
-</header>
 
-<!-- ========== MOBILE POPUP MENU (muncul saat hamburger ditekan) ========== -->
-<div class="mobile-popup" id="mobile-popup">
-  <div class="mobile-popup-content">
+    <!-- ========== MAIN CONTENT ========== -->
+  <main>
+    <section id="beranda">
+      <div class="container hero-content">
+        <h1>Membangun Masa Depan <br>dengan Teknologi</h1>
+        <p>Kami membantu bisnis bertransformasi melalui solusi digital yang inovatif, efisien, dan berkelanjutan.</p>
 
-    <ul>
-      <li><a href="#beranda">Beranda</a></li>
-      <li><a href="#tentang">Tentang</a></li>
-      <li><a href="#layanan">Layanan</a></li>
-      <li><a href="#proyek">Proyek</a></li>
-      <li><a href="#our-team">Tim</a></li>
-      <li><a href="#hubungi">Teknologi</a></li>
-    </ul>
-
-    
-    <!-- Close Button -->
-    <button class="close-popup" id="close-popup">
-      <span class="material-symbols-outlined">close</span>
-    </button>
-
-  </div>
-</div>
-
-  <!-- ========== MAIN CONTENT ========== -->
-<main>
-  <section id="beranda">
-    <div class="container hero-content">
-      <h1>Membangun Masa Depan <br>dengan Teknologi</h1>
-      <p>Kami membantu bisnis bertransformasi melalui solusi digital yang inovatif, efisien, dan berkelanjutan.</p>
-
-      <div class="hero-buttons">
-        <a href="#layanan" class="btn-primary">Lihat Layanan Kami</a>
-        <a href="#hubungi" class="btn-secondary">Hubungi Kami</a>
+        <div class="hero-buttons">
+          <a href="#layanan" class="btn-primary">Lihat Layanan Kami</a>
+          <a href="#hubungi" class="btn-secondary">Hubungi Kami</a>
+        </div>
       </div>
-    </div>
 
-   <!-- ========== GAMBAR TIM MENGAPUNG ========== -->
-    <div class="floating-images">
-      <img class="floating-name" src="/assets/img/Group 5.png" alt="Sugih Nugraha">
-      <img class="floating-name" src="/assets/img/Group 4.png" alt="Ahmad Taupik">
-      <img class="floating-name" src="/assets/img/Group 6.png" alt="Rendra Nur Y">
-      <img class="floating-name" src="/assets/img/Group 3.png" alt="Sutiawan">
-      <img class="floating-name" src="/assets/img/Group 2.png" alt="Rasya Putri R">
-    </div>
-  </section>
+    <!-- ========== GAMBAR TIM MENGAPUNG ========== -->
+      <div class="floating-images">
+        <img class="floating-name" src="/assets/img/Group 5.png" alt="Sugih Nugraha">
+        <img class="floating-name" src="/assets/img/Group 4.png" alt="Ahmad Taupik">
+        <img class="floating-name" src="/assets/img/Group 6.png" alt="Rendra Nur Y">
+        <img class="floating-name" src="/assets/img/Group 3.png" alt="Sutiawan">
+        <img class="floating-name" src="/assets/img/Group 2.png" alt="Rasya Putri R">
+      </div>
+    </section>
 
 
-  <section id="tentang" class="section-tentang">
-    <div class="container tentang-grid">
+    <section id="tentang" class="section-tentang">
+      <div class="container tentang-grid">
 
-      <!-- KIRI: Teks Deskriptif -->
-          <div class="tentang-teks">
-            <span class="subtitle">
-              <img src="/assets/img/Ellipse 1.png" alt="titik" class="subtitle-icon">
-              Tentang Kami
-            </span>
-            <h2 class="headline">Deking TechLab</h2>
-            <p class="deskripsi">
-              Startup teknologi yang berfokus pada pengembangan solusi digital modern. 
-              Kami memadukan kreativitas, riset, dan teknologi untuk membantu bisnis 
-              beradaptasi dengan era digital yang terus berkembang.
-            </p>
+        <!-- KIRI: Teks Deskriptif -->
+            <div class="tentang-teks">
+              <span class="subtitle">
+                <img src="/assets/img/Ellipse 1.png" alt="titik" class="subtitle-icon">
+                Tentang Kami
+              </span>
+              <h2 class="headline">Deking TechLab</h2>
+              <p class="deskripsi">
+                Startup teknologi yang berfokus pada pengembangan solusi digital modern. 
+                Kami memadukan kreativitas, riset, dan teknologi untuk membantu bisnis 
+                beradaptasi dengan era digital yang terus berkembang.
+              </p>
 
-            <div class="visi-misi">
-              <div class="visi-misi-content">
-                <h3>Visi:</h3>
-                <p>Menjadi mitra teknologi terpercaya dalam mendorong transformasi digital lintas industri.</p>
+              <div class="visi-misi">
+                <div class="visi-misi-content">
+                  <h3>Visi:</h3>
+                  <p>Menjadi mitra teknologi terpercaya dalam mendorong transformasi digital lintas industri.</p>
+                </div>
+                <div class="visi-misi-content">
+                  <h3>Misi:</h3>
+                  <ul class="misi-list">
+                    <li>Menghadirkan solusi digital yang berdampak dan inovatif.</li>
+                    <li>Menjalin kerja sama jangka panjang dengan klien.</li>
+                    <li>Menumbuhkan budaya kolaboratif yang berorientasi pada hasil.</li>
+                  </ul>
+                </div>
               </div>
-              <div class="visi-misi-content">
-                <h3>Misi:</h3>
-                <ul class="misi-list">
-                  <li>Menghadirkan solusi digital yang berdampak dan inovatif.</li>
-                  <li>Menjalin kerja sama jangka panjang dengan klien.</li>
-                  <li>Menumbuhkan budaya kolaboratif yang berorientasi pada hasil.</li>
-                </ul>
-              </div>
+            </div>
+
+
+          <!-- KANAN: Visual -->
+          <div class="tentang-visual">
+            <img src="/assets/img/Slide 16_9 - 1.png" alt="Tim Deking TechLab">
+          </div>
+
+      </div>
+    </section>
+
+
+    <section id="layanan" class="section-layanan">
+
+      <!-- Subtitle -->
+      <span class="subtitle">
+        <img src="/assets/img/Ellipse 1.png" alt="titik" class="subtitle-icon">
+        Layanan Kami
+      </span>
+
+      <div class="container">
+
+        <!-- Header (Headline + Deskripsi) -->
+        <div class="layanan-header">
+          <h2 class="headline">Apa yang Kami Lakukan?</h2>
+          <p class="layanan-deskripsi">
+            Kami menyediakan layanan digital untuk membantu bisnis Anda berkembang lebih cepat.
+          </p>
+        </div>
+
+        <!-- List layanan -->
+        <div class="list-layanan">
+          <div class="layanan-item">
+            <div class="item-visual">
+              <img src="/assets/img/service-1.png" alt="">
+            </div>
+            <div class="deskripsi">
+              <h3>Pengembangan Perangkat Lunak</h3>
+              <p>Kami membangun aplikasi web dan mobile dengan performa <br> tinggi dan pengalaman pengguna yang optimal.</p>
             </div>
           </div>
 
+          <div class="layanan-item">
+            <div class="deskripsi">
+              <h3>Desain UI/UX</h3>
+              <p>Kami menciptakan desain antarmuka yang intuitif, estetis, <br> dan berfokus pada kebutuhan pengguna.</p>
+            </div>
+            <div class="item-visual">
+              <img src="/assets/img/service-2.png" alt="">
+            </div>
+          </div>
 
-        <!-- KANAN: Visual -->
-        <div class="tentang-visual">
-          <img src="/assets/img/Slide 16_9 - 1.png" alt="Tim Deking TechLab">
+          <div class="layanan-item">
+            <div class="item-visual">
+              <img src="/assets/img/service-3.png" alt="">
+            </div>
+            <div class="deskripsi">
+              <h3>Konsultasi IT</h3>
+              <p>Dapatkan strategi digital terbaik untuk menghadapi tantangan brteknologi masa kini.</p>
+            </div>
+          </div>
         </div>
 
-    </div>
-  </section>
+      </div>
+    </section>
 
 
-  <section id="layanan" class="section-layanan">
 
+    <section id="proyek" class="section-proyek">
+
+      <!-- Subtitle -->
+      <span class="subtitle">
+        <img src="/assets/img/Ellipse 1.png" alt="titik" class="subtitle-icon">
+        Proyek & Studi Kasus
+      </span>
+
+      <div class="container">
+        <!-- Header -->
+        <div class="proyek-header">
+          <h2 class="headline">Proyek Kami</h2>
+          <p class="proyek-deskripsi">
+            Beberapa hasil karya dan studi kasus yang telah kami selesaikan untuk berbagai klien dengan kebutuhan unik.
+          </p>
+        </div>
+
+        <!-- List proyek -->
+        <div class="list-proyek">
+
+          <div class="proyek-item">
+            <div class="deskripsi">
+              <h2>Website E-Commerce</h2>
+              <p>Pembuatan platform belanja online dengan sistem pembayaran aman, desain responsif, dan dashboard admin intuitif.</p>
+            </div>
+            <div class="item-visual">
+              <img src="/assets/img/project-1.png" alt="Proyek 1">
+            </div>
+          </div>
+
+          <div class="proyek-item">
+            <div class="deskripsi">
+              <h2>Aplikasi Manajemen Bisnis</h2>
+              <p>Sebuah aplikasi internal untuk membantu perusahaan mengelola data pelanggan, keuangan, dan laporan kinerja.</p>
+            </div>
+            <div class="item-visual">
+              <img src="/assets/img/project-2.png" alt="Proyek 2">
+            </div>
+          </div>
+
+          <div class="proyek-item">
+            <div class="deskripsi">
+              <h2>Website Profil Perusahaan</h2>
+              <p>Pembuatan situs profil profesional yang menampilkan identitas brand, layanan, dan testimoni klien.</p>
+            </div>
+            <div class="item-visual">
+              <img src="/assets/img/project-3.png" alt="Proyek 3">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="our-team" class="section-team">
+
+      <!-- Subtitle -->
+      <span class="subtitle">
+        <img src="/assets/img/Ellipse 1.png" alt="titik" class="subtitle-icon">
+        Tim Kami
+      </span>
+
+      <div class="container">
+
+        <!-- Header (Headline + Deskripsi) -->
+        <div class="team-header">
+          <h2 class="headline">Meet Our Team</h2>
+          <p class="team-deskripsi">
+            Tim profesional kami siap membantu Anda mewujudkan solusi digital terbaik.
+          </p>
+        </div>
+
+        <!-- List team -->
+        <div class="list-team">
+          <div class="team-item">
+            <div class="team-img">
+              <img src="/assets/img/IMG-CardTean(5).png" alt="Team 1">
+            </div>
+            <h2>Moch. Sugih Nugraha</h2>
+            <p>Founder & Chief Executive Officer</p>
+          </div>
+
+          <div class="team-item">
+            <div class="team-img">
+              <img src="/assets/img/IMG-CardTean(1).png" alt="Team 2">
+            </div>
+            <h2>Sutiawan</h2>
+            <p>Founder & Product Manager</p>
+          </div>
+
+          <div class="team-item">
+            <div class="team-img">
+              <img src="/assets/img/IMG-CardTean(2).png" alt="Team 3">
+            </div>
+            <h2>Rendra Nur Yuliadi</h2>
+            <p>Chief Technology Officer & Frontend Dev</p>
+          </div>
+
+          <div class="team-item">
+            <div class="team-img">
+              <img src="/assets/img/IMG-CardTean(3).png" alt="Team 4">
+            </div>
+            <h2>Ahmad Taupik</h2>
+            <p>Engineering Lead & Backend Dev</p>
+          </div>
+
+          <div class="team-item">
+            <div class="team-img">
+              <img src="/assets/img/IMG-CardTean(4).png" alt="Team 5">
+            </div>
+            <h2>Rasya Putri Ramadhani</h2>
+            <p>Chief Operating Officer</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+  <section id="hubungi" class="section-hubungi">
     <!-- Subtitle -->
     <span class="subtitle">
       <img src="/assets/img/Ellipse 1.png" alt="titik" class="subtitle-icon">
-      Layanan Kami
+      Teknologi & Kontak
     </span>
 
-    <div class="container">
+    <div class="container-hubungi">
 
-      <!-- Header (Headline + Deskripsi) -->
-      <div class="layanan-header">
-        <h2 class="headline">Apa yang Kami Lakukan?</h2>
-        <p class="layanan-deskripsi">
-          Kami menyediakan layanan digital untuk membantu bisnis Anda berkembang lebih cepat.
-        </p>
-      </div>
-
-      <!-- List layanan -->
-      <div class="list-layanan">
-        <div class="layanan-item">
-          <div class="item-visual">
-            <img src="/assets/img/service-1.png" alt="">
-          </div>
-          <div class="deskripsi">
-            <h3>Pengembangan Perangkat Lunak</h3>
-            <p>Kami membangun aplikasi web dan mobile dengan performa <br> tinggi dan pengalaman pengguna yang optimal.</p>
-          </div>
-        </div>
-
-        <div class="layanan-item">
-          <div class="deskripsi">
-            <h3>Desain UI/UX</h3>
-            <p>Kami menciptakan desain antarmuka yang intuitif, estetis, <br> dan berfokus pada kebutuhan pengguna.</p>
-          </div>
-          <div class="item-visual">
-            <img src="/assets/img/service-2.png" alt="">
-          </div>
-        </div>
-
-        <div class="layanan-item">
-          <div class="item-visual">
-            <img src="/assets/img/service-3.png" alt="">
-          </div>
-          <div class="deskripsi">
-            <h3>Konsultasi IT</h3>
-            <p>Dapatkan strategi digital terbaik untuk menghadapi tantangan brteknologi masa kini.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-
-  <section id="proyek" class="section-proyek">
-
-    <!-- Subtitle -->
-    <span class="subtitle">
-      <img src="/assets/img/Ellipse 1.png" alt="titik" class="subtitle-icon">
-      Proyek & Studi Kasus
-    </span>
-
-    <div class="container">
       <!-- Header -->
-      <div class="proyek-header">
-        <h2 class="headline">Proyek Kami</h2>
-        <p class="proyek-deskripsi">
-          Beberapa hasil karya dan studi kasus yang telah kami selesaikan untuk berbagai klien dengan kebutuhan unik.
+      <div class="hubungi-header">
+        <h2 class="headline">Teknologi yang Kami Gunakan & Hubungi Kami</h2>
+        <p class="hubungi-deskripsi">
+          Kami menggunakan teknologi modern dan terpercaya untuk menghadirkan performa terbaik.  
+          Siap berkolaborasi untuk membangun solusi digital Anda berikutnya.
         </p>
       </div>
 
-      <!-- List proyek -->
-      <div class="list-proyek">
+      <!-- List Teknologi -->
+      <div class="list-teknologi">
+        <div class="tech-item"><img src="/assets/img/Laravel.png" alt="Laravel"></div>
+        <div class="tech-item"><img src="/assets/img/Vercel.png" alt="Vercel"></div>
+        <div class="tech-item"><img src="/assets/img/Laravel.png" alt="Laravel"></div>
+        <div class="tech-item"><img src="/assets/img/Vercel.png" alt="Vercel"></div>
+        <div class="tech-item"><img src="/assets/img/Laravel.png" alt="Laravel"></div>
+        <div class="tech-item"><img src="/assets/img/Vercel.png" alt="Vercel"></div>
+        <div class="tech-item"><img src="/assets/img/Laravel.png" alt="Laravel"></div>
+        <div class="tech-item"><img src="/assets/img/Vercel.png" alt="Vercel"></div>
+        <div class="tech-item"><img src="/assets/img/Laravel.png" alt="Laravel"></div>
+        <div class="tech-item"><img src="/assets/img/Vercel.png" alt="Vercel"></div>
+      </div>
 
-        <div class="proyek-item">
-          <div class="deskripsi">
-            <h2>Website E-Commerce</h2>
-            <p>Pembuatan platform belanja online dengan sistem pembayaran aman, desain responsif, dan dashboard admin intuitif.</p>
-          </div>
-          <div class="item-visual">
-            <img src="/assets/img/project-1.png" alt="Proyek 1">
+      <!-- Contact Form -->
+      <div class="container-contact">
+        <!-- Kiri -->
+        <div class="contact-info">
+          <h2 class="contact-title">Bangun Proyek Hebat Bersama Kami</h2>
+          <p class="contact-subtitle">
+            Kami siap membantu mewujudkan ide digital Anda menjadi kenyataan.
+          </p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <img src="/assets/img/ic_round-email.png" alt="Email Icon" class="contact-icon">
+              <p>hello@dekingtechlab.com</p>
+            </div>
+            <div class="contact-item">
+              <img src="/assets/img/ri_whatsapp-fill.png" alt="WhatsApp Icon" class="contact-icon">
+              <p>+62 859-2627-0826 (Sugih Nugraha)</p>
+            </div>
+            <div class="contact-item">
+              <img src="/assets/img/ri_whatsapp-fill.png" alt="WhatsApp Icon" class="contact-icon">
+              <p>+62 899-5277-077 (Sutiawan)</p>
+            </div>
           </div>
         </div>
 
-        <div class="proyek-item">
-          <div class="deskripsi">
-            <h2>Aplikasi Manajemen Bisnis</h2>
-            <p>Sebuah aplikasi internal untuk membantu perusahaan mengelola data pelanggan, keuangan, dan laporan kinerja.</p>
-          </div>
-          <div class="item-visual">
-            <img src="/assets/img/project-2.png" alt="Proyek 2">
-          </div>
+        <!-- Kanan -->
+        <div class="contact-form">
+          <form action="#" method="post">
+            <div class="form-group">
+              <label for="nama">Nama Lengkap</label>
+              <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Alamat Email</label>
+              <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+            </div>
+            <div class="form-group">
+              <label for="pesan">Pesan Anda</label>
+              <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+            </div>
+            <button type="submit" class="btn-kirim">Kirim</button>
+          </form>
         </div>
-
-        <div class="proyek-item">
-          <div class="deskripsi">
-            <h2>Website Profil Perusahaan</h2>
-            <p>Pembuatan situs profil profesional yang menampilkan identitas brand, layanan, dan testimoni klien.</p>
-          </div>
-          <div class="item-visual">
-            <img src="/assets/img/project-3.png" alt="Proyek 3">
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <section id="our-team" class="section-team">
 
-    <!-- Subtitle -->
-    <span class="subtitle">
-      <img src="/assets/img/Ellipse 1.png" alt="titik" class="subtitle-icon">
-      Tim Kami
-    </span>
+  </main>
 
-    <div class="container">
 
-      <!-- Header (Headline + Deskripsi) -->
-      <div class="team-header">
-        <h2 class="headline">Meet Our Team</h2>
-        <p class="team-deskripsi">
-          Tim profesional kami siap membantu Anda mewujudkan solusi digital terbaik.
-        </p>
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- Kolom Logo -->
+      <div class="footer-logo">
+        <img src="/assets/img/Deking Logo 1.png" alt="Deking TechLab Logo">
       </div>
 
-      <!-- List team -->
-      <div class="list-team">
-        <div class="team-item">
-          <div class="team-img">
-            <img src="/assets/img/IMG-CardTean(5).png" alt="Team 1">
-          </div>
-          <h2>Moch. Sugih Nugraha</h2>
-          <p>Founder & Chief Executive Officer</p>
-        </div>
+      <!-- Navigasi -->
+      <ul class="footer-nav">
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#proyek">Proyek</a></li>
+        <li><a href="#hubungi">Hubungi</a></li>
+      </ul>
 
-        <div class="team-item">
-          <div class="team-img">
-            <img src="/assets/img/IMG-CardTean(1).png" alt="Team 2">
-          </div>
-          <h2>Sutiawan</h2>
-          <p>Founder & Product Manager</p>
-        </div>
-
-        <div class="team-item">
-          <div class="team-img">
-            <img src="/assets/img/IMG-CardTean(2).png" alt="Team 3">
-          </div>
-          <h2>Rendra Nur Yuliadi</h2>
-          <p>Chief Technology Officer & Frontend Dev</p>
-        </div>
-
-        <div class="team-item">
-          <div class="team-img">
-            <img src="/assets/img/IMG-CardTean(3).png" alt="Team 4">
-          </div>
-          <h2>Ahmad Taupik</h2>
-          <p>Engineering Lead & Backend Dev</p>
-        </div>
-
-        <div class="team-item">
-          <div class="team-img">
-            <img src="/assets/img/IMG-CardTean(4).png" alt="Team 5">
-          </div>
-          <h2>Rasya Putri Ramadhani</h2>
-          <p>Chief Operating Officer</p>
-        </div>
+      <!-- Sosial Media -->
+      <div class="footer-social">
+        <a href="#"><img src="/assets/img/ri_instagram-fill.png" alt="Instagram"></a>
+        <a href="#"><img src="/assets/img/streamline-logos_tiktok-logo-block.png" alt="TikTok"></a>
+        <a href="#"><img src="/assets/img/akar-icons_facebook-fill.png" alt="Facebook"></a>
+        <a href="#"><img src="/assets/img/uil_linkedin.png" alt="LinkedIn"></a>
       </div>
 
     </div>
-  </section>
 
+    <!-- Garis Pembatas -->
+    <div class="footer-divider"></div>
 
-<section id="hubungi" class="section-hubungi">
-  <!-- Subtitle -->
-  <span class="subtitle">
-    <img src="/assets/img/Ellipse 1.png" alt="titik" class="subtitle-icon">
-    Teknologi & Kontak
-  </span>
-
-  <div class="container-hubungi">
-
-    <!-- Header -->
-    <div class="hubungi-header">
-      <h2 class="headline">Teknologi yang Kami Gunakan & Hubungi Kami</h2>
-      <p class="hubungi-deskripsi">
-        Kami menggunakan teknologi modern dan terpercaya untuk menghadirkan performa terbaik.  
-        Siap berkolaborasi untuk membangun solusi digital Anda berikutnya.
-      </p>
+    <!-- Copywriting -->
+    <div class="footer-copy">
+      © 2025 Deking TechLab. Semua Hak Dilindungi.
     </div>
+  </footer>
 
-    <!-- List Teknologi -->
-    <div class="list-teknologi">
-      <div class="tech-item"><img src="/assets/img/Laravel.png" alt="Laravel"></div>
-      <div class="tech-item"><img src="/assets/img/Vercel.png" alt="Vercel"></div>
-      <div class="tech-item"><img src="/assets/img/Laravel.png" alt="Laravel"></div>
-      <div class="tech-item"><img src="/assets/img/Vercel.png" alt="Vercel"></div>
-      <div class="tech-item"><img src="/assets/img/Laravel.png" alt="Laravel"></div>
-      <div class="tech-item"><img src="/assets/img/Vercel.png" alt="Vercel"></div>
-      <div class="tech-item"><img src="/assets/img/Laravel.png" alt="Laravel"></div>
-      <div class="tech-item"><img src="/assets/img/Vercel.png" alt="Vercel"></div>
-      <div class="tech-item"><img src="/assets/img/Laravel.png" alt="Laravel"></div>
-      <div class="tech-item"><img src="/assets/img/Vercel.png" alt="Vercel"></div>
-    </div>
 
-    <!-- Contact Form -->
-    <div class="container-contact">
-      <!-- Kiri -->
-      <div class="contact-info">
-        <h2 class="contact-title">Bangun Proyek Hebat Bersama Kami</h2>
-        <p class="contact-subtitle">
-          Kami siap membantu mewujudkan ide digital Anda menjadi kenyataan.
-        </p>
-        <div class="contact-details">
-          <div class="contact-item">
-            <img src="/assets/img/ic_round-email.png" alt="Email Icon" class="contact-icon">
-            <p>hello@dekingtechlab.com</p>
-          </div>
-          <div class="contact-item">
-            <img src="/assets/img/ri_whatsapp-fill.png" alt="WhatsApp Icon" class="contact-icon">
-            <p>+62 859-2627-0826 (Sugih Nugraha)</p>
-          </div>
-          <div class="contact-item">
-            <img src="/assets/img/ri_whatsapp-fill.png" alt="WhatsApp Icon" class="contact-icon">
-            <p>+62 899-5277-077 (Sutiawan)</p>
-          </div>
-        </div>
-      </div>
+  <!-- Tombol Scroll ke Atas -->
+  <button id="scroll-top" class="scroll-top" aria-label="Kembali ke atas">
+    <i class="bx bx-up-arrow-alt"></i>
+  </button>
 
-      <!-- Kanan -->
-      <div class="contact-form">
-        <form action="#" method="post">
-          <div class="form-group">
-            <label for="nama">Nama Lengkap</label>
-            <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Alamat Email</label>
-            <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
-          </div>
-          <div class="form-group">
-            <label for="pesan">Pesan Anda</label>
-            <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
-          </div>
-          <button type="submit" class="btn-kirim">Kirim</button>
-        </form>
-      </div>
-    </div>
+  <!-- Tombol WhatsApp Floating -->
+  <div class="wa-floating">
+    <a href="https://wa.me/6285926270826?text=Halo%20kak%2C%20saya%20ingin%20bertanya%20terkait%20layanan%20di%20Deking%20TechLab.%20Apakah%20bisa%20dibantu%3F%20Terima%20kasih." 
+      target="_blank">
+      <i class="bx bxl-whatsapp"></i>
+      <span class="wa-label">WhatsApp</span>
+    </a>
   </div>
-</section>
-
-
-</main>
-
-
-<!-- ==================== FOOTER ==================== -->
-<footer class="footer">
-  <div class="footer-container">
-
-    <!-- Kolom Logo -->
-    <div class="footer-logo">
-      <img src="/assets/img/Deking Logo 1.png" alt="Deking TechLab Logo">
-    </div>
-
-    <!-- Navigasi -->
-    <ul class="footer-nav">
-      <li><a href="#home">Beranda</a></li>
-      <li><a href="#tentang">Tentang</a></li>
-      <li><a href="#layanan">Layanan</a></li>
-      <li><a href="#proyek">Proyek</a></li>
-      <li><a href="#hubungi">Hubungi</a></li>
-    </ul>
-
-    <!-- Sosial Media -->
-    <div class="footer-social">
-      <a href="#"><img src="/assets/img/ri_instagram-fill.png" alt="Instagram"></a>
-      <a href="#"><img src="/assets/img/streamline-logos_tiktok-logo-block.png" alt="TikTok"></a>
-      <a href="#"><img src="/assets/img/akar-icons_facebook-fill.png" alt="Facebook"></a>
-      <a href="#"><img src="/assets/img/uil_linkedin.png" alt="LinkedIn"></a>
-    </div>
-
-  </div>
-
-  <!-- Garis Pembatas -->
-  <div class="footer-divider"></div>
-
-  <!-- Copywriting -->
-  <div class="footer-copy">
-    © 2025 Deking TechLab. Semua Hak Dilindungi.
-  </div>
-</footer>
-
-
-<!-- Tombol Scroll ke Atas -->
-<button id="scroll-top" class="scroll-top" aria-label="Kembali ke atas">
-  <i class="bx bx-up-arrow-alt"></i>
-</button>
-
-<!-- Tombol WhatsApp Floating -->
-<div class="wa-floating">
-  <a href="https://wa.me/6285926270826?text=Halo%20kak%2C%20saya%20ingin%20bertanya%20terkait%20layanan%20di%20Deking%20TechLab.%20Apakah%20bisa%20dibantu%3F%20Terima%20kasih." 
-     target="_blank">
-    <i class="bx bxl-whatsapp"></i>
-    <span class="wa-label">WhatsApp</span>
-  </a>
-</div>
 
 
 
